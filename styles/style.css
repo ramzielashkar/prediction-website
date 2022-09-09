@@ -23,6 +23,7 @@
   justify-content: center;
   width: 100%;
   margin-top: 3rem;
+  height: 500px;
 }
 .dog-image img{
   width:50%;
@@ -52,6 +53,10 @@
   padding: 8px 10px;
   border-color: #0F3460;
   color: #0F3460;
+}
+.results .input{
+  text-align:center;
+  
 }
 .btn{
   cursor: pointer;
