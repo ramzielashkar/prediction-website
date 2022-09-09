@@ -2,40 +2,43 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Prediction Website</title>
+    <link rel="stylesheet" href="styles/style.css">
   </head>
   <body>
 
     <!-- Title -->
-    <h1>Welcome To My Prediction Website</h1>
+    <h1 class="title">Welcome To My Prediction Website</h1>
     <!-- Dog image container -->
-    <div class="dog-image">
-      <img src="images\golden-retriever-dog-21668976.jpg" alt="">
+    <div class="dog-image flex">
+      <img src="images\golden-retriever-dog-21668976.jpg" alt="" width="auto">
     </div>
     <!-- Users input container Start-->
-    <div class="user-input">
+    <div class="user-input flex">
       <label for="name">Name:</label>
-      <input type="text" name="name" id="name" placeholder="Enter your name:">
+      <input type="text" name="name" id="name" placeholder="Enter your name" class="input">
+      <button type="button" name="button" class="btn">Predict</button>
+
     </div>
-    <button type="button" name="button" class="btn">Predict</button>
     <!-- Users input container End-->
 
     <!-- Results container Start-->
-    <div class="results">
+    <div class="results flex">
       <!-- Gender Prediction -->
-      <div class="gender-result">
-        <label for="gender">Predicted Gender:</label>
-        <input type="text" name="gender"  id="gender" disabled>
+      <div class="gender-result resize column">
+        <label for="gender" class="label">Predicted Gender:</label>
+        <input type="text" name="gender"  id="gender" class="input" disabled>
       </div>
       <!-- Age Prediction -->
-      <div class="age-result">
-        <label for="age">Predicted Age:</label>
-        <input type="text" name="age"  id="age" disabled>
+      <div class="age-result resize column">
+        <label for="age" class="label">Predicted Age:</label>
+        <input type="text" name="age"  id="age" class="input" disabled>
       </div>
       <!-- Nationality Prediction -->
-      <div class="nat-result">
-        <label for="nationality">Predicted Nationalities:</label>
-        <input type="text" name="nationality"  id="nationality" disabled>
+      <div class="nat-result resize column">
+        <label for="nationality" class="label">Predicted Nationalities:</label>
+        <input type="text" name="nationality"  id="nationality" class="input" disabled>
       </div>
 
     </div>
