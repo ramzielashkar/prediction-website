@@ -9,56 +9,93 @@
 
   </head>
   <body>
-    <div class="container" hidden>
-
     <!-- Title -->
     <h1 class="title">Welcome To My Prediction Website</h1>
-
-    <h4 class="ip" id="ip">IP:</h4>
-    <!-- Dog image container -->
-    <div class="dog-image flex">
-      <img src="" alt="" width="auto" id="img">
+    <div class="toggle flex">
+      <button type="button" name="button" class="btn signin" title="Don't have an account?">Sign Up</button>
+      <button type="button" name="button" class="btn" title="Already a user?">Login</button>
     </div>
-    <!-- Users input container Start-->
-    <div class="user-input flex">
-      <label for="name">Name:</label>
-      <input type="text" name="name" id="name" placeholder="Enter your name" class="input" required>
-      <button type="button" name="button" class="btn" id="btn">Predict</button>
-    </div>
-    <!-- Users input container End-->
-
-    <!-- Results container Start-->
-    <div class="results flex">
-      <!-- Gender Prediction -->
-      <div class="gender-result resize column">
-        <label for="gender" class="label">Predicted Gender:</label>
-        <input type="text" name="gender"  id="gender" class="input" disabled>
+    <!-- Login Container Start -->
+    <div class="form flex" id ="login-form">
+      <div class="username">
+        <label for="user" class="label">Username:</label>
+        <input type="text" name="name" id="user" class ="input" placeholder="Enter username:">
       </div>
-      <!-- Age Prediction -->
-      <div class="age-result resize column">
-        <label for="age" class="label">Predicted Age:</label>
-        <input type="text" name="age"  id="age" class="input" disabled>
-      </div>
-      <!-- Nationality Prediction -->
-      <div class="nat-result resize column">
-        <label for="nationality" class="label">Predicted Nationalities:</label>
-        <input type="text" name="nationality"  id="nationality" class="input" disabled>
+      <div class="password">
+        <label for="password" class="label">password:</label>
+        <input type="password" name="password" id="password" class ="input" placeholder="Enter password:">
       </div>
 
+        <button type="button" name="button" class="btn" id="login-btn">Continue</button>
     </div>
-    <!-- Results container End-->
 
-    <!-- Random activity container start -->
-    <div class="activity-container flex">
-      <label for="name" class="label">Activity to Do:</label>
-      <input type="text" name="name" id="activity" class="input size" disabled>
-      <button type="button" name="button" class="btn" id ="bored">Bored</button>
+    <!-- Login Container End -->
+
+
+    <!-- Signup Container Start -->
+    <div class="form flex hidden" id ="signup-form">
+      <div class="fullname">
+        <label for="fullname" class="label">Full Name:</label>
+        <input type="text" name="fullname" id="fullname" class ="input" placeholder="Enter full name:">
+      </div>
+      <div class="username">
+        <label for="user" class="label">Username:</label>
+        <input type="text" name="name" id="user" class ="input" placeholder="Enter username:">
+      </div>
+      <div class="password">
+        <label for="password" class="label">password:</label>
+        <input type="password" name="password" id="password" class ="input" placeholder="Enter password:">
+      </div>
+        <button type="button" name="button" class="btn" id="login-btn">Continue</button>
     </div>
-    <!-- Random activity container end -->
+    <!-- Signup Container End -->
+
+    <div class="container" hidden>
+        <h4 class="ip" id="ip">IP:</h4>
+      <!-- Dog image container -->
+      <div class="dog-image flex">
+        <img src="" alt="" width="auto" id="img">
+      </div>
+      <!-- Users input container Start-->
+      <div class="user-input flex">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" class="input" required>
+        <button type="button" name="button" class="btn" id="btn">Predict</button>
+      </div>
+      <!-- Users input container End-->
+
+      <!-- Results container Start-->
+      <div class="results flex">
+        <!-- Gender Prediction -->
+        <div class="gender-result resize column">
+          <label for="gender" class="label">Predicted Gender:</label>
+          <input type="text" name="gender"  id="gender" class="input" disabled>
+        </div>
+        <!-- Age Prediction -->
+        <div class="age-result resize column">
+          <label for="age" class="label">Predicted Age:</label>
+          <input type="text" name="age"  id="age" class="input" disabled>
+        </div>
+        <!-- Nationality Prediction -->
+        <div class="nat-result resize column">
+          <label for="nationality" class="label">Predicted Nationalities:</label>
+          <input type="text" name="nationality"  id="nationality" class="input" disabled>
+        </div>
+
+      </div>
+      <!-- Results container End-->
+
+      <!-- Random activity container start -->
+      <div class="activity-container flex">
+        <label for="name" class="label">Activity to Do:</label>
+        <input type="text" name="name" id="activity" class="input size" disabled>
+        <button type="button" name="button" class="btn" id ="bored">Bored</button>
+      </div>
+      <!-- Random activity container end -->
 
   </div>
 
-  
+
 
     <script type="text/javascript" src="JS/index.js"></script>
     </body>

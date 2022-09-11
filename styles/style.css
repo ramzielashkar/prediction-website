@@ -97,6 +97,33 @@
   width: 30vw;
 }
 
+.toggle{
+  justify-content: center;
+  margin-top: 7rem;
+}
+.signin{
+  margin-right: 1rem;
+}
+
+.form{
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3rem;
+  }
+
+.password{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.fullname{
+margin-bottom: 3rem;
+}
+.hidden{
+  display: none;
+}
+
 
 /* media queries */
 
