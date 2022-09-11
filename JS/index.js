@@ -9,6 +9,25 @@ const predict = document.querySelector('#btn');
 const ip = document.getElementById('ip');
 const boredbtn = document.getElementById('bored');
 const randomactivity = document.getElementById('activity');
+const loginbtn = document.getElementById('login-btn');
+const signupbtn = document.getElementById('signup-btn');
+const loginform = document.getElementById('login-form');
+const signupform = document.getElementById('signup-form');
+const usernameinput = document.getElementById('user');
+const passinput =  document.getElementById('password');
+const login_btn = document.getElementById('lcontinue-btn');
+const signup_btn = document.getElementById('scontinue-btn');
+const fnameinput = document.getElementById('fullname');
+const predictionpage = document.querySelector('.container');
+const toggle = document.querySelector('.toggle');
+const loginuserinput = document.getElementById('luser');
+const loginpassinput = document.getElementById('lpassword');
+const msg = document.getElementById('message');
+
+
+
+
+
 
 // Inializing functions
 
@@ -56,9 +75,63 @@ let activity = () => {
       }).catch((error) =>console.error(error));
 };
 
+//Signup function
+let signupfunction = () => {
+  const fullname = fnameinput.value;
+  const user_name = usernameinput.value;
+  const pass = passinput.value;
+  const person = {
+    name: user_name,
+    pass: pass
+  };
+signupform.classList.toggle("hidden");
+predictionpage.classList.remove("hidden");
+toggle.classList.add("hidden");
+localStorage.setItem('person',JSON.stringify(person));
+};
+
+// login function
+let loginfunction = () => {
+const loginuser = loginuserinput.value;
+const loginpass = loginpassinput.value;
+const p =JSON.parse((localStorage.getItem("person")));
+if(loginuser == p.name && loginpass == p.pass){
+  loginform.classList.toggle("hidden");
+  predictionpage.classList.remove("hidden");
+  toggle.classList.add("hidden");
+
+}
+
+else{
+msg.textContent = "Access Denied, Try Again!"
+msg.style.color = "red";
+}
+
+};
+
+// buttons to toggle between signup and login form
+loginbtn.addEventListener('click', () => {
+signupform.classList.toggle("hidden");
+loginform.classList.toggle("hidden");
+});
+
+signupbtn.addEventListener('click', () => {
+signupform.classList.toggle("hidden");
+loginform.classList.toggle("hidden");
+});
 
 
+// buttons to login and signup
+login_btn.addEventListener("click", () => {
+  const user_name = usernameinput.value;
+  const pass = passinput.value;
+  loginfunction();
+});
 
+signup_btn.addEventListener("click", () => {
+  signupfunction();
+
+});
 
 
 dog();

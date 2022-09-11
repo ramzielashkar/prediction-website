@@ -12,21 +12,23 @@
     <!-- Title -->
     <h1 class="title">Welcome To My Prediction Website</h1>
     <div class="toggle flex">
-      <button type="button" name="button" class="btn signin" title="Don't have an account?">Sign Up</button>
-      <button type="button" name="button" class="btn" title="Already a user?">Login</button>
+      <button type="button" name="button" class="btn signin" title="Don't have an account?" id = "signup-btn">Sign Up</button>
+      <button type="button" name="button" class="btn" title="Already a user?" id = "login-btn">Login</button>
     </div>
     <!-- Login Container Start -->
     <div class="form flex" id ="login-form">
       <div class="username">
         <label for="user" class="label">Username:</label>
-        <input type="text" name="name" id="user" class ="input" placeholder="Enter username:">
+        <input type="text" name="name" id="luser" class ="input" placeholder="Enter username:">
       </div>
       <div class="password">
         <label for="password" class="label">password:</label>
-        <input type="password" name="password" id="password" class ="input" placeholder="Enter password:">
+        <input type="password" name="password" id="lpassword" class ="input" placeholder="Enter password:">
       </div>
 
-        <button type="button" name="button" class="btn" id="login-btn">Continue</button>
+        <button type="button" name="button" class="btn " id="lcontinue-btn">Continue</button>
+
+        <h4 class = "heading" id = "message"></h3>
     </div>
 
     <!-- Login Container End -->
@@ -46,12 +48,12 @@
         <label for="password" class="label">password:</label>
         <input type="password" name="password" id="password" class ="input" placeholder="Enter password:">
       </div>
-        <button type="button" name="button" class="btn" id="login-btn">Continue</button>
+        <button type="button" name="button" class="btn" id="scontinue-btn">Continue</button>
     </div>
     <!-- Signup Container End -->
 
-    <div class="container" hidden>
-        <h4 class="ip" id="ip">IP:</h4>
+    <div class="container hidden" >
+        <h4 class="heading" id="ip">IP:</h4>
       <!-- Dog image container -->
       <div class="dog-image flex">
         <img src="" alt="" width="auto" id="img">
