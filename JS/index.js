@@ -5,7 +5,7 @@ const name = document.getElementById('name');
 const gender = document.getElementById('gender');
 const age = document.getElementById('age');
 const nationality = document.getElementById('nationality');
-const predict = document.querySelector('.btn');
+const predict = document.querySelector('#btn');
 
 // Inializing functions
 
