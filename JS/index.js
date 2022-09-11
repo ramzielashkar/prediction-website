@@ -80,22 +80,26 @@ let signupfunction = () => {
   const fullname = fnameinput.value;
   const user_name = usernameinput.value;
   const pass = passinput.value;
-  const person = {
+  var person = {
     name: user_name,
     pass: pass
   };
 signupform.classList.toggle("hidden");
 predictionpage.classList.remove("hidden");
 toggle.classList.add("hidden");
-localStorage.setItem('person',JSON.stringify(person));
+localStorage.setItem(user_name,JSON.stringify(person));
 };
 
 // login function
 let loginfunction = () => {
 const loginuser = loginuserinput.value;
 const loginpass = loginpassinput.value;
-const p =JSON.parse((localStorage.getItem("person")));
-if(loginuser == p.name && loginpass == p.pass){
+const p =JSON.parse((localStorage.getItem(loginuser)));
+if(p==null){
+  msg.textContent = "Access Denied, Try Again!"
+  msg.style.color = "red";
+}
+else if(loginuser == p.name && loginpass == p.pass){
   loginform.classList.toggle("hidden");
   predictionpage.classList.remove("hidden");
   toggle.classList.add("hidden");
