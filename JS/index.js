@@ -6,6 +6,9 @@ const gender = document.getElementById('gender');
 const age = document.getElementById('age');
 const nationality = document.getElementById('nationality');
 const predict = document.querySelector('#btn');
+const ip = document.getElementById('ip');
+const boredbtn = document.getElementById('bored');
+const randomactivity = document.getElementById('activity');
 
 // Inializing functions
 
@@ -37,10 +40,30 @@ let usernationality = (username) => {fetch('https://api.nationalize.io/?name='+u
 
 };
 
+// function to get the ip address
+let ipaddress = () => {
+  axios.get("https://api.ipify.org/?format=json").then((response) => {
+        const ip_address = response.data.ip;
+        ip.textContent = "IP: " +ip_address;
+      }).catch((error) =>console.error(error));
+};
+
+// function to get a random activity
+let activity = () => {
+  axios.get("https://www.boredapi.com/api/activity").then((response) => {
+        const r_activity = response.data.activity;
+        randomactivity.value = r_activity;
+      }).catch((error) =>console.error(error));
+};
+
+
+
+
 
 
 dog();
-// Setting the button event listener
+ipaddress();
+// Setting the predict button event listener
 predict.addEventListener("click", () => {
 // Getting the value given by the user
 const username = name.value;
@@ -49,6 +72,10 @@ userage(username);
 usernationality(username);
 });
 
+// setting "bored" button event listener
+boredbtn.addEventListener("click", () => {
+activity();
+});
 
 
 

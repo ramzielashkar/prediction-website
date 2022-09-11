@@ -5,8 +5,11 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <title>Prediction Website</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
   </head>
   <body>
+    <div class="container" hidden>
 
     <!-- Title -->
     <h1 class="title">Welcome To My Prediction Website</h1>
@@ -45,11 +48,18 @@
     </div>
     <!-- Results container End-->
 
+    <!-- Random activity container start -->
     <div class="activity-container flex">
       <label for="name" class="label">Activity to Do:</label>
-      <input type="text" name="name" id="activity" class="input" disabled>
+      <input type="text" name="name" id="activity" class="input size" disabled>
       <button type="button" name="button" class="btn" id ="bored">Bored</button>
     </div>
+    <!-- Random activity container end -->
+
+  </div>
+
+  
+
     <script type="text/javascript" src="JS/index.js"></script>
-  </body>
+    </body>
 </html>
