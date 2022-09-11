@@ -5,7 +5,29 @@ const name = document.getElementById('name');
 const gender = document.getElementById('gender');
 const age = document.getElementById('age');
 const nationality = document.getElementById('nationality');
-const predict = document.querySelector('.btn');
+const predict = document.querySelector('#btn');
+const ip = document.getElementById('ip');
+const boredbtn = document.getElementById('bored');
+const randomactivity = document.getElementById('activity');
+const loginbtn = document.getElementById('login-btn');
+const signupbtn = document.getElementById('signup-btn');
+const loginform = document.getElementById('login-form');
+const signupform = document.getElementById('signup-form');
+const usernameinput = document.getElementById('user');
+const passinput =  document.getElementById('password');
+const login_btn = document.getElementById('lcontinue-btn');
+const signup_btn = document.getElementById('scontinue-btn');
+const fnameinput = document.getElementById('fullname');
+const predictionpage = document.querySelector('.container');
+const toggle = document.querySelector('.toggle');
+const loginuserinput = document.getElementById('luser');
+const loginpassinput = document.getElementById('lpassword');
+const msg = document.getElementById('message');
+
+
+
+
+
 
 // Inializing functions
 
@@ -37,10 +59,84 @@ let usernationality = (username) => {fetch('https://api.nationalize.io/?name='+u
 
 };
 
+// function to get the ip address
+let ipaddress = () => {
+  axios.get("https://api.ipify.org/?format=json").then((response) => {
+        const ip_address = response.data.ip;
+        ip.textContent = "IP: " +ip_address;
+      }).catch((error) =>console.error(error));
+};
+
+// function to get a random activity
+let activity = () => {
+  axios.get("https://www.boredapi.com/api/activity").then((response) => {
+        const r_activity = response.data.activity;
+        randomactivity.value = r_activity;
+      }).catch((error) =>console.error(error));
+};
+
+//Signup function
+let signupfunction = () => {
+  const fullname = fnameinput.value;
+  const user_name = usernameinput.value;
+  const pass = passinput.value;
+  const person = {
+    name: user_name,
+    pass: pass
+  };
+signupform.classList.toggle("hidden");
+predictionpage.classList.remove("hidden");
+toggle.classList.add("hidden");
+localStorage.setItem('person',JSON.stringify(person));
+};
+
+// login function
+let loginfunction = () => {
+const loginuser = loginuserinput.value;
+const loginpass = loginpassinput.value;
+const p =JSON.parse((localStorage.getItem("person")));
+if(loginuser == p.name && loginpass == p.pass){
+  loginform.classList.toggle("hidden");
+  predictionpage.classList.remove("hidden");
+  toggle.classList.add("hidden");
+
+}
+
+else{
+msg.textContent = "Access Denied, Try Again!"
+msg.style.color = "red";
+}
+
+};
+
+// buttons to toggle between signup and login form
+loginbtn.addEventListener('click', () => {
+signupform.classList.toggle("hidden");
+loginform.classList.toggle("hidden");
+});
+
+signupbtn.addEventListener('click', () => {
+signupform.classList.toggle("hidden");
+loginform.classList.toggle("hidden");
+});
+
+
+// buttons to login and signup
+login_btn.addEventListener("click", () => {
+  const user_name = usernameinput.value;
+  const pass = passinput.value;
+  loginfunction();
+});
+
+signup_btn.addEventListener("click", () => {
+  signupfunction();
+
+});
 
 
 dog();
-// Setting the button event listener
+ipaddress();
+// Setting the predict button event listener
 predict.addEventListener("click", () => {
 // Getting the value given by the user
 const username = name.value;
@@ -49,6 +145,10 @@ userage(username);
 usernationality(username);
 });
 
+// setting "bored" button event listener
+boredbtn.addEventListener("click", () => {
+activity();
+});
 
 
 
