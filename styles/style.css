@@ -17,6 +17,8 @@
   margin-top: 2rem;
 }
 
+
+
 /* Dog image container */
 
 .dog-image{
@@ -56,7 +58,7 @@
 }
 .results .input{
   text-align:center;
-  
+
 }
 .btn{
   cursor: pointer;
